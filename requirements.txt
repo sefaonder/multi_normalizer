@@ -1,3 +1,12 @@
-pandarallel
-zemberek-python
-pandas
+antlr4-python3-runtime==4.8
+dill==0.3.7
+numpy==1.26.2
+pandarallel==1.6.5
+pandas==2.1.4
+psutil==5.9.7
+python-dateutil==2.8.2
+pytz==2023.3.post1
+setuptools==69.0.3
+six==1.16.0
+tzdata==2023.3
+zemberek-python==0.2.3

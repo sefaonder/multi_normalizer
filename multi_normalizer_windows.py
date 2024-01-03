@@ -38,8 +38,9 @@ def preprocess_text(text):
     
     return normalized_text
 
+print(f"Size of raw text : {df_raw_text.size}")
 
-df_normalized_text['tweet'] = df_raw_text['tweet'].parallel_apply(preprocess_text)
+df_normalized_text['text'] = df_raw_text['text'].parallel_apply(preprocess_text)
 
 # See some result :D
 print(df_normalized_text.head(20))

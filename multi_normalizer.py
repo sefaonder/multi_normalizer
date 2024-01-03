@@ -1,16 +1,17 @@
 import pandas as pd
 import re
+from time import time
 from pandarallel import pandarallel
 from zemberek import (
     TurkishSentenceNormalizer,
     TurkishMorphology,
     )
 
+start_time = time()
 
 # Zemberek Normalizer
 morphology = TurkishMorphology.create_with_defaults()
 normalizer = TurkishSentenceNormalizer(morphology)
-
 
 df_raw_text = pd.read_csv("dataset.csv")
 
@@ -39,10 +40,23 @@ def preprocess_text(text):
     
     return normalized_text
 
+print(f"Size of raw text : {df_raw_text.size}")
 
-df_normalized_text['tweet'] = df_raw_text['tweet'].parallel_apply(preprocess_text)
+df_normalized_text['text'] = df_raw_text['text'].parallel_apply(preprocess_text)
+
+# Pandas apply function
+#df_normalized_text['text'] = df_raw_text['text'].apply(preprocess_text)
+
+end_time = time()
+seconds_elapsed = end_time - start_time
+
+hours, rest = divmod(seconds_elapsed, 3600)
+minutes, seconds = divmod(rest, 60)
+
+print(f"Executing time ({hours}) hours , ({minutes}) minutes , ({seconds}) seconds  elapsed")
 
 # See some result :D
-print(df_normalized_text.head(20))
+# print(df_normalized_text.head(20))
 
+# Save the result
 df_normalized_text.to_csv("normalized_dataset.csv", encoding='utf-8')

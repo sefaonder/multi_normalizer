@@ -10,7 +10,7 @@ Parallelism in computer programming refers to the simultaneous execution of mult
 ### Assembly Line Production
 Imagine a factory assembly line where a complex product is being manufactured. Instead of a single worker assembling the entire product, the process is divided into multiple stations, each handled by a different worker. Each worker focuses on a specific task, and as the product moves along the assembly line, it gets assembled more efficiently. In computer programming, parallelism works similarly by breaking down a larger task into smaller, manageable units that can be processed simultaneously.
 
-![Illustration 1](images\line.jpg)
+![Illustration 1](images/line.jpg)
 
 (Image Created By Microsoft Bing Image Creator)
 
@@ -68,13 +68,13 @@ python3 multi_normalizer.py
 ```
 
 #### Sample run
-![Execution photo 1](images\exec1.png)
+![Execution photo 1](images/exec1.png)
 
-![Execution photo 2](images\exec2.png)
+![Execution photo 2](images/exec2.png)
 
 It works on 8 cores on the device
 
-![Execution photo 3](images\exec3.png)
+![Execution photo 3](images/exec3.png)
 
 The size of the sample data used in the images is approximately 12.6 MB.
 
